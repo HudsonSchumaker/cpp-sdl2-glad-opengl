@@ -1,5 +1,5 @@
 /**
-* @file Vec3.h
+* @file Vec3.hpp
 * @author Hudson Schumaker
 * @brief Defines Vec3 class.
 * @version 1.0.0
