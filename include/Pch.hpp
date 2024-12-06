@@ -77,6 +77,8 @@ public:
     constexpr static const float PI = 3.14159265358979323846f;
     constexpr static const float TWO_PI = 2.0f * PI;
     constexpr static const float HALF_PI = 0.5f * PI;
+    constexpr static const float DIV_PI_180 = PI / 180.0f;
+    constexpr static const float DIV_180_PI = 180.0f / PI;
 
     static const int SCREEN_WIDTH = 1280;
     static const int SCREEN_H_WIDTH = SCREEN_WIDTH / 2;
