@@ -31,7 +31,7 @@ public:
     Vec2();
     Vec2(float value);
     Vec2(float x, float y);
-    ~Vec2()= default;
+    ~Vec2() = default;
 
     Vec3 toVec3() const;                    // a.toVec3()
 
