@@ -1,7 +1,7 @@
 /**
 * @file DeMath.hpp
 * @author Hudson Schumaker
-* @brief Implements the DeMath class.
+* @brief Defines and implements the DeMath class.
 * @version 1.0.0
 *
 * Dodoi-Engine is a game engine developed by Dodoi-Lab.
@@ -37,26 +37,39 @@ public:
     * @param y2 The y-coordinate of the second point.
     * @return The distance between the two points.
     */
-    static float distanceBetweenPoints(const float x1, const float y1, const float x2, const float y2);
+    inline static float distanceBetweenPoints(float x1, float y1, float x2, float y2) {
+        // using the euclidean distance formula
+        return std::sqrtf((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1));
+    }
 
     /**
     * @brief Normalize thr angle.
     * @param angle The angle.
     * @return The normalized angle.
     */
-    static float normalizeAngle(const float angle);
+    inline static float normalizeAngle(float angle) {
+        angle = std::remainder(angle, Defs::TWO_PI);
+        if (angle < 0) {
+            angle = Defs::TWO_PI + angle;
+        }
+        return angle;
+    }
 
     /**
     * @brief Converts an angle from degrees to radians.
     * @param angle The angle in degrees.
     * @return The angle in radians.
     */
-    static float deg2Rad(const float angle);
+    inline static float deg2Rad(float angle) {
+        return angle * Defs::DIV_PI_180;
+    }
 
     /**
     * @brief Converts an angle from radians to degrees.
     * @param angle The angle in radians.
     * @return The angle in degrees.
     */
-    static float rad2Deg(const float angle);
+    inline static float rad2Deg(float angle) {
+        return angle * Defs::DIV_180_PI;
+    }
 };
