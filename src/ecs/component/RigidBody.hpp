@@ -20,7 +20,7 @@
 * limitations under the License.
 */
 #pragma once
-#include "Component.h"
+#include "Component.hpp"
 #include "../../../include/Vec3.hpp"
 
 class RigidBody final : public Component {
