@@ -38,6 +38,7 @@ public:
     void linkVbo4f(Vbo& vbo, GLuint layout);
     void linkVbo3f2f(Vbo& vbo);
     void linkVbo3f3f(Vbo& vbo);
+    void linkVbo3f2f3f(Vbo& vbo);
 
     void destroy();
 };

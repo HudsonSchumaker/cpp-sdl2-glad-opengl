@@ -46,8 +46,11 @@ void Vao::linkVbo4f(Vbo& vbo, GLuint layout) {
 void Vao::linkVbo3f2f(Vbo& vbo) {
     bind();
     vbo.bind();
+    // Position attribute
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(GLfloat), (void*)0);
     glEnableVertexAttribArray(0);
+
+    // Texture Coord attribute
     glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(GLfloat), (void*)(3 * sizeof(GLfloat)));
     glEnableVertexAttribArray(1);
     vbo.unbind();
@@ -57,10 +60,31 @@ void Vao::linkVbo3f2f(Vbo& vbo) {
 void Vao::linkVbo3f3f(Vbo& vbo) {
     bind();
     vbo.bind();
+    // Position attribute
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(GLfloat), (void*)0);
     glEnableVertexAttribArray(0);
+
+    // Texture Coord attribute
     glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(GLfloat), (void*)(3 * sizeof(GLfloat)));
     glEnableVertexAttribArray(1);
+    vbo.unbind();
+    unbind();
+}
+
+void Vao::linkVbo3f2f3f(Vbo& vbo) {
+    bind();
+    vbo.bind();
+    // Position attribute
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(GLfloat), (void*)0);
+    glEnableVertexAttribArray(0);
+
+    // Texture Coord attribute
+    glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(GLfloat), (void*)(3 * sizeof(GLfloat)));
+    glEnableVertexAttribArray(1);
+
+    // Normal attribute
+    glVertexAttribPointer(2, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(GLfloat), (void*)(5 * sizeof(GLfloat)));
+    glEnableVertexAttribArray(2);
     vbo.unbind();
     unbind();
 }
