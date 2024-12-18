@@ -1,5 +1,5 @@
 /**
-* @file RigidBody.h
+* @file RigidBody.hpp
 * @author Hudson Schumaker
 * @brief Defines the RigidBody class.
 * @version 1.0.0

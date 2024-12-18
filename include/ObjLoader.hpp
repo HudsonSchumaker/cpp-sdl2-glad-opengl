@@ -21,9 +21,17 @@
 */
 #pragma once
 #include "Pch.hpp"
+#include "../src/ecs/component/Mesh.hpp"
 
 class ObjLoader final {
 public:
     ObjLoader() = default;
     ~ObjLoader() = default;
+
+    /**
+	* @brief Load a mesh from an OBJ file.
+	* @param path The path to the OBJ file.
+	* @return The loaded mesh.
+	*/
+	static Mesh* load(const std::string& path);
 };

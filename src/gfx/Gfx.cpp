@@ -52,7 +52,7 @@ void Gfx::setGfxContext(bool fullscreen, bool vsync) {
     // SDL_GLContext is an alias for "void*"
     context = SDL_GL_CreateContext(window);
     if (context == NULL) {
-        fprintf(stderr, "Failed to create OpenGL context: %s\n", SDL_GetError());
+        std::cerr << "Failed to create OpenGL context: " << SDL_GetError() << std::endl;
         SDL_DestroyWindow(window);
         SDL_Quit();
         exit(EXIT_FAILURE);
@@ -60,7 +60,7 @@ void Gfx::setGfxContext(bool fullscreen, bool vsync) {
 
     // Initialize GLAD
     if (!gladLoadGLLoader((GLADloadproc)SDL_GL_GetProcAddress)) {
-        fprintf(stderr, "failed to initialize GLAD\n");
+        std::cerr << "Failed to initialize GLAD." << std::endl;
         SDL_GL_DeleteContext(context);
         SDL_DestroyWindow(window);
         SDL_Quit();
